@@ -14,12 +14,7 @@
                <button class="btnAdd" routerLink="../addUser"><span class="btnAddIcon"><i class="fa fa-plus"></i></span><span class="add">Add</span></button>
            </div>
 
-           <!--added delete button-->
-           <div class="col-sm-12" style="display: flex;justify-content: flex-end;">
-               <button class="btnDelete" routerLink="../deleteUser"><span class="btnDeleteIcon"><i class="fa fa-minus"></i></span><span class="delete">Delete</span></button>
-           </div>
-           <!--added delete button-->
-
+        
        </div>
        <div class="row">
          <div class="col-sm-12">
@@ -47,7 +42,9 @@
                  <td style="color:#14c506;">{{item.status ? 'active':'inactive'}}</td>
                  <td style="text-align: right;">
                   <button class="btnedit" routerLink="../editUser/{{item.id}}"> <i class="fa fa-edit "></i> </button>
-                 </td>
+                  <!-- Added delete button at user view -->
+                  <button class="btndelete" data-target="#removeMissionModal"> <i class="fa fa-trash"></i> </button>
+                </td>
                </tr>
                <tr *ngIf="result.length === 0">
                 <td colspan="6" style="text-align:center;width:100%;font-size:20px;color: red;"><b>No Data Found </b> </td>

@@ -14,14 +14,6 @@
                <button class="btnAdd" routerLink="../addMissionSkill"><span class="btnAddIcon"><i class="fa fa-plus"></i></span><span class="add">Add</span></button>
            </div>
            
-           <!--added delete and edit button-->
-           <div class="col-sm-12" style="display: flex;justify-content: flex-end;">
-            <button class="btnEdit" routerLink="../editMissionSkill"><span class="btnEditIcon"><i class="fa fa-star"></i></span><span class="edit">Edit</span></button>
-           </div>
-           <div class="col-sm-16" style="display: flex;justify-content: flex-end;">
-           <button class="btnDelete" routerLink="../deleteMissionSkill"><span class="btnDeleteIcon"><i class="fa fa-minus"></i></span><span class="delete">Delete</span></button>
-            </div>
-            <!--added delete and edit button-->
 
        </div>
        <div class="row">
@@ -41,6 +33,14 @@
                  <td>{{item.skillName}}</td>
                  <td style="text-align: right;color:#14c506;" [ngStyle]="item.status == 'active' ? {'color': '#14c506'} : {'color': '#ff0000'}">{{item.status == 'active' ? 'Active' : 'In-Active'}}</td>
                  <td style="text-align: right;">
+
+                  <!--added delete and edit button-->
+                  <button class="btnedit" routerLink="../updateMissionSkill/{{ item.id }}">
+                    <i class="fa fa-edit"></i>
+                  </button>
+                  <button class="btndelete" data-target="#removeMissionSkillModal">
+                    <i class="fa fa-trash-o"></i>
+                  </button>
 
                  </td>
                </tr>

@@ -36,7 +36,7 @@
                   <div class="row">
                     <div class="col-sm-6">
                       <label class="col-form-label">Mission Title</label>
-                      <textarea class="form-control" row="1" placeholder="Enter your Title" formControlName="missionTitle"></textarea>
+                      <input class="form-control" row="1" placeholder="Enter your Title" formControlName="missionTitle">
                       <span class="text-danger" *ngIf="missionTitle.invalid && (missionTitle.touched || formValid)">
                         Please Enter Mission Title
                       </span>
@@ -44,12 +44,12 @@
 
                     <div class="col-sm-6">
                       <label class="col-form-label">Mission Theme</label>
-                      <select class="form-select" formControlName="cityId">
+                      <select class="form-select" formControlName="missionThemeId">
                         <option value="">Select Theme</option>
-                        <option *ngFor="let item of cityList" value="{{item.value}}">{{item.text}}</option>
+                        <option *ngFor="let item of missionThemeList" value="{{item.value}}">{{item.text}}</option>
                       </select>
-                      <span class="text-danger" *ngIf="cityId.invalid && (cityId.touched || formValid)">
-                        Please Select Theme
+                      <span class="text-danger" *ngIf="missionThemeId.invalid && (missionThemeId.touched || formValid)">
+                        Please Select Mission Theme
                       </span>
                     </div>
                   </div>

@@ -14,12 +14,6 @@
                <button class="btnAdd" routerLink="../addMission"><span class="btnAddIcon"><i class="fa fa-plus"></i></span><span class="add">Add</span></button>
            </div>
 
-           <!--added Edit button-->
-           <div class="col-sm-12" style="display: flex;justify-content: flex-end;">
-            <button class="btnEdit" routerLink="../editMission"><span class="btnEditIcon"><i class="fa fa-star"></i></span><span class="edit">Edit</span></button>
-        </div>
-        <!--added Edit button-->
-
        </div>
        <div class="row">
          <div class="col-sm-12">
@@ -42,7 +36,14 @@
                  <td style="text-align: right;">{{item.startDate | date: 'dd/MM/yyyy'}}</td>
                  <td style="text-align: right;">{{item.endDate | date: 'dd/MM/yyyy'}}</td>
                  <td style="text-align: right;">
-                   <button class="btndelete" (click)="OpenRemoveMissionModal(item.id)"> <i class="fa fa-trash-o"></i> </button>
+                  
+                  <!--added Edit button-->
+                  <button class="btnedit" routerLink="../editMission/{{ item.id }}">
+                    <i class="fa fa-edit"></i>
+                  </button>
+                  <!--added Edit button-->
+                  
+                  <button class="btndelete" (click)="OpenRemoveMissionModal(item.id)"> <i class="fa fa-trash-o"></i> </button>
                  </td>
                </tr>
                <tr *ngIf="result.length === 0">
